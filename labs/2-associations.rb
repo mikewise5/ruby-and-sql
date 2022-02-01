@@ -12,6 +12,21 @@
 # Elon Musk - elon@tesla.com - Tesla, Inc.
 # Tim Cook - tim@apple.com - Apple Inc.
 
+puts "There are now #{Contact.all.count} contacts."
+
+apple = Company.where({ name: "Apple, Inc."})[0]
+puts "Contacts at Apple, Inc."
+for contact in apple.contacts
+    puts "#{contact.first_name} #{contact.last_name} - #{contact.company.name}"
+end
+
+tesla = Company.where({ name: "Tesla, Inc."})[0]
+puts "Contacts at Tesla, Inc."
+for contact in tesla.contacts
+    puts "#{contact.first_name} #{contact.last_name} - #{contact.company.name}"
+end
+
+
 # 2. similar to above, but this time organized by company, write code to display each company (name) and its contacts, e.g.:
 
 # ---------------------------------
